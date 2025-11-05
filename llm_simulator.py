@@ -22,7 +22,8 @@ class ConversationTurn:
     turn: int
     customer_message: str
     verification_message: str
-    timestamp: str
+    customer_response: str = ""
+    timestamp: str = ""
 
 
 class LLMCustomerBot:
@@ -191,6 +192,7 @@ class LLMArtworkSimulator:
                     turn=turn,
                     customer_message=customer_message,
                     verification_message=verification_message,
+                    customer_response=customer_response,
                     timestamp=datetime.now().isoformat()
                 )
                 self.conversations.append(conversation)
